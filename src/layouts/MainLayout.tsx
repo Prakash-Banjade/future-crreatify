@@ -3,10 +3,12 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
+import { ColorPicker } from '../components/color-picker';
 
 const MainLayout: React.FC = () => {
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [currentColor, setCurrentColor] = useState('blue');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,8 @@ const MainLayout: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header scrolled={scrolled} />
+      <Header scrolled={scrolled} currentColor={currentColor} />
+      <ColorPicker onColorChange={val => setCurrentColor(val)} />
       <main className="flex-grow">
         <motion.div
           key={pathname}

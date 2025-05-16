@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 interface HeaderProps {
   scrolled: boolean;
+  currentColor: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ scrolled }) => {
+const Header: React.FC<HeaderProps> = ({ scrolled, currentColor }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -16,21 +17,20 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-md py-2' 
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? 'bg-white shadow-md py-2'
           : 'bg-transparent py-4 md:py-6'
-      }`}
+        }`}
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img 
-            src="/logo.png" 
-            alt="Future Creatify Logo" 
+          <img
+            src={`/logo-${currentColor}.png`}
+            alt="Future Creatify Logo"
             className="h-16 w-auto"
           />
         </Link>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             Contact Us
           </Link>
         </nav>
-        
+
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-slate-800 focus:outline-none"
@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
+
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <motion.div
@@ -73,43 +73,43 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           className="md:hidden bg-white"
         >
           <div className="container-custom py-4 flex flex-col space-y-4">
-            <NavLink 
-              to="/" 
+            <NavLink
+              to="/"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </NavLink>
-            <NavLink 
-              to="/about" 
+            <NavLink
+              to="/about"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </NavLink>
-            <NavLink 
-              to="/blogs" 
+            <NavLink
+              to="/blogs"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
               onClick={() => setMobileMenuOpen(false)}
             >
               Blogs
             </NavLink>
-            <NavLink 
-              to="/teams" 
+            <NavLink
+              to="/teams"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
               onClick={() => setMobileMenuOpen(false)}
             >
               Our Team
             </NavLink>
-            <NavLink 
-              to="/events" 
+            <NavLink
+              to="/events"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
               onClick={() => setMobileMenuOpen(false)}
             >
               Events
             </NavLink>
-            <Link 
-              to="/#contact" 
+            <Link
+              to="/#contact"
               className="btn btn-primary w-full text-center"
               onClick={() => setMobileMenuOpen(false)}
             >

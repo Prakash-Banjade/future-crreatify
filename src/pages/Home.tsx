@@ -29,28 +29,29 @@ const Home: React.FC = () => {
                 Empowering Educators for a <span className="text-primary">Creative Future</span>
               </h1>
               <p className="text-lg text-slate-600 mb-8">
-                We train, facilitate, and design innovative programs through 
+                We train, facilitate, and design innovative programs through
                 project-based integrated pedagogy to shape the minds and futures of students.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/about" className="btn btn-primary">
                   Learn More
                 </Link>
-                <Link to="/blogs" className="btn btn-outline">
-                  Read Our Blog
+                <Link to="/blogs" className="group btn btn-outline">
+                  Read Our Blogs
+                  <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform ease-in-out duration-300" />
                 </Link>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative"
             >
-              <img 
-                src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Education Innovation" 
+              <img
+                src="https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Education Innovation"
                 className="rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
@@ -78,7 +79,7 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Abstract shapes */}
         <div className="absolute right-0 bottom-0 w-1/3 h-1/3 bg-primary/10 rounded-tl-full -z-0" />
         <div className="absolute left-0 top-0 w-1/4 h-1/4 bg-accent/10 rounded-br-full -z-0" />
@@ -94,11 +95,11 @@ const Home: React.FC = () => {
             </h2>
             <p className="text-slate-600">
               At Future Creatify, we believe in the power of education to transform lives.
-              Our mission is to empower educators with innovative teaching methodologies 
+              Our mission is to empower educators with innovative teaching methodologies
               and resources to create meaningful learning experiences.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -151,7 +152,7 @@ const Home: React.FC = () => {
               View All Blogs <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 staggered-fade-in">
             {featuredBlogs.slice(0, 3).map((blog, index) => (
               <BlogCard key={blog.id} blog={blog} index={index} />
@@ -169,11 +170,11 @@ const Home: React.FC = () => {
               What Our Community Says
             </h2>
             <p className="text-slate-600">
-              Don't just take our word for it. Hear from the educators and institutions 
+              Don't just take our word for it. Hear from the educators and institutions
               who have partnered with us and experienced transformative results.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
@@ -201,10 +202,10 @@ const Home: React.FC = () => {
                 Let's Connect and Collaborate
               </h2>
               <p className="text-slate-600 mb-8">
-                Whether you're an educator looking for resources, a school interested in 
+                Whether you're an educator looking for resources, a school interested in
                 our programs, or just want to learn more about what we do, we'd love to hear from you.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-md mr-4">
@@ -215,7 +216,7 @@ const Home: React.FC = () => {
                     <p className="text-slate-600">123 Education Street, Knowledge City, 10001</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-md mr-4">
                     <Mail className="text-primary" />
@@ -227,7 +228,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
